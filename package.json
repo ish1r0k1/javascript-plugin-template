@@ -1,0 +1,24 @@
+{
+  "name": "plugin_template",
+  "version": "1.0.0",
+  "description": "create javascript library with es2015",
+  "main": "index.js",
+  "author": "Hiroki ISHIWATARI",
+  "license": "MIT",
+  "devDependencies": {
+    "babel": "^5.8.34",
+    "babel-plugin-add-module-exports": "^0.1.2",
+    "babel-preset-es2015": "^6.3.13",
+    "babelify": "^7.2.0",
+    "bannerify": "^1.0.1",
+    "browserify": "^13.0.0",
+    "uglify-js": "^2.6.1",
+    "watchify": "^3.7.0"
+  },
+  "scripts": {
+    "build": "npm run build-debug && npm run build-min",
+    "build-debug": "browserify src/plugin_name.js -o dist/plugin_name.js -s Plugin_name -t [ babelify --presets [ es2015-loose ] --plugins [ add-module-exports ] ] -p [bannerify --file .banner]",
+    "build-min": "uglifyjs dist/plugin_name.js -o dist/plugin_name.min.js --comments -m --screw-ie8 -c unused=false",
+    "build-watch": "watchify src/plugin_name.js -o dist/plugin_name.js -s Plugin_name -t [ babelify --presets [ es2015-loose ] ]"
+  }
+}

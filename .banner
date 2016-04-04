@@ -1,0 +1,6 @@
+/**
+ * <%= pkg.name %>
+ * <%= pkg.description %>
+ * Author: @ish1r0k1
+ * Licensed under the <%= pkg.license %> license
+ */
